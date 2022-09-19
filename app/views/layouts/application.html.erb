@@ -3,14 +3,22 @@
   <head>
     <title>DemoWithTheCrew</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-visit-control" content="reload">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
     <%= javascript_importmap_tags %>
+
+    <link rel="manifest" href="/manifest.json" />
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/shared/navbar' %>
+
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>
